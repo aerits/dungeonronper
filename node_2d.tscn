@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dnyv47lcp8iji"]
+
+[ext_resource type="Texture2D" uid="uid://b6kpyjka46rqs" path="res://latest-2905447824.webp" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://31wxihstnf1x" path="res://node_3d.tscn" id="1_wtcfe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0e48y"]
+font_size = 50
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2d" type="Node2D" unique_id=1841232928]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=361637927]
+position = Vector2(12, -1)
+texture = ExtResource("1_0e48y")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=210807907]
+
+[node name="Control" type="Control" parent="." unique_id=1639764145]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -565.0
+offset_top = -312.0
+offset_right = 557.0
+offset_bottom = 303.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=630441266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -314.5
+offset_right = 562.0
+offset_bottom = 309.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control/HBoxContainer" unique_id=91454029]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewport" type="SubViewport" parent="Control/HBoxContainer/SubViewportContainer" unique_id=446071676]
+
+[node name="Node3D" parent="Control/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1643327515 instance=ExtResource("1_wtcfe")]
+
+[node name="Label" type="Label" parent="Control/HBoxContainer" unique_id=1370143535]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "welcom to
+dungeonronper"
+label_settings = SubResource("LabelSettings_0e48y")

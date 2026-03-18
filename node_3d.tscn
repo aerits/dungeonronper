@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://31wxihstnf1x"]
+
+[ext_resource type="MeshLibrary" uid="uid://djntwgmndy754" path="res://meshes.meshlib" id="1_a202f"]
+[ext_resource type="Script" uid="uid://i5elg0e5qfn" path="res://move_player.gd" id="2_noarx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[node name="Node3D" type="Node3D" unique_id=1643327515]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1058351842]
+mesh_library = ExtResource("1_a202f")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 0, 0, 1, 0, 786432, 1, 1, 786432, 1, 2, 786432, 65535, 1, 786432, 65534, 1, 786432, 65533, 1, 786432, 1, 3, 786432, 0, 3, 786432, 65535, 3, 786432, 65534, 3, 786432, 65533, 3, 786432, 65533, 4, 983040, 65533, 5, 983040, 65533, 6, 983040, 65532, 6, 983040, 65531, 6, 983040, 65530, 6, 983040, 65529, 6, 983040, 65528, 6, 983040, 65528, 5, 983040, 65528, 4, 983040, 65528, 3, 983040, 65528, 1, 983040, 65528, 0, 983040, 65528, 65535, 983040, 65529, 65535, 983040, 65530, 65535, 983040, 65531, 65535, 983040, 65532, 65535, 983040, 65533, 65535, 983040, 65533, 0, 983040, 65527, 3, 983040, 65526, 3, 983040, 65525, 3, 983040, 65524, 3, 983040, 65527, 1, 983040, 65526, 1, 983040, 65525, 1, 983040, 65524, 1, 983040, 65523, 1, 983040, 65523, 0, 983040, 65523, 65535, 983040, 65523, 65534, 983040, 65523, 3, 983040, 65523, 4, 983040, 65523, 5, 983040, 65522, 6, 983040, 65523, 6, 983040, 65521, 3, 983040, 65521, 4, 983040, 65521, 5, 983040, 65521, 6, 983040, 65521, 1, 983040, 65521, 0, 983040, 65521, 65535, 983040, 65521, 65534, 983040, 1, 65535, 983040, 1, 65534, 983040, 65535, 65535, 983040, 65535, 65534, 983040, 0, 65534, 983040)
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1219718974]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0.5, -0.5)
+script = ExtResource("2_noarx")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=223153060]
+fov = 110.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D" unique_id=1824740749]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=342684895]
+shape = SubResource("BoxShape3D_noarx")
