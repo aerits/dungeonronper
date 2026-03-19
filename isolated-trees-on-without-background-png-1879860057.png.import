@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6kpyjka46rqs"
-path.s3tc="res://.godot/imported/latest-2905447824.webp-cbb0ce999660673b3f801b47608fe569.s3tc.ctex"
+uid="uid://b1yuaxc8p4acw"
+path.s3tc="res://.godot/imported/isolated-trees-on-without-background-png-1879860057.png-d0e1edec048a91461a026d32bd474074.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://latest-2905447824.webp"
-dest_files=["res://.godot/imported/latest-2905447824.webp-cbb0ce999660673b3f801b47608fe569.s3tc.ctex"]
+source_file="res://isolated-trees-on-without-background-png-1879860057.png"
+dest_files=["res://.godot/imported/isolated-trees-on-without-background-png-1879860057.png-d0e1edec048a91461a026d32bd474074.s3tc.ctex"]
 
 [params]
 

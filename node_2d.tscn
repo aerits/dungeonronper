@@ -40,10 +40,17 @@ grow_vertical = 2
 alignment = 1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control/HBoxContainer" unique_id=91454029]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+stretch = true
+stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="Control/HBoxContainer/SubViewportContainer" unique_id=446071676]
+handle_input_locally = false
+anisotropic_filtering_level = 0
+size = Vector2i(184, 208)
+render_target_update_mode = 4
 
 [node name="Node3D" parent="Control/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1643327515 instance=ExtResource("1_wtcfe")]
 
