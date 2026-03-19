@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://cjhc4bu70ndff"]
 
+[ext_resource type="Texture2D" uid="uid://cdvbb1se2xnu1" path="res://hajime.png" id="1_bew7s"]
 [ext_resource type="Texture2D" uid="uid://b1yuaxc8p4acw" path="res://isolated-trees-on-without-background-png-1879860057.png" id="1_pcwuq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v1q5o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1q5o"]
 margin = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhjyq"]
+transparency = 1
+albedo_texture = ExtResource("1_bew7s")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_62j3k"]
+material = SubResource("StandardMaterial3D_yhjyq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcwuq"]
 transparency = 1
@@ -23,6 +32,15 @@ mesh = SubResource("BoxMesh_v1q5o")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1747398244]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1764085012]
+shape = SubResource("BoxShape3D_v1q5o")
+
+[node name="hajime" type="MeshInstance3D" parent="." unique_id=1027847610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.360592, 0, 0)
+mesh = SubResource("QuadMesh_62j3k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hajime" unique_id=1036534931]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hajime/StaticBody3D" unique_id=1474164022]
 shape = SubResource("BoxShape3D_v1q5o")
 
 [node name="tree" type="MeshInstance3D" parent="." unique_id=1444150105]
