@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-signal collideWith(item: String)
+signal collideWith(item: String, pos: Vector3i)
 
 @export var gridmap: GridMap = null
 
@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 var dir = Vector3(0,0,1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	var prev_pos = self.global_basis
 	var mot = Vector3(0,0,0)
 	if Input.is_action_just_pressed("forward"):
 		mot = dir
@@ -33,5 +32,5 @@ func _physics_process(delta: float) -> void:
 		var pos = self.global_position + dir
 		var coords = gridmap.local_to_map(pos)
 		var itemID = gridmap.get_cell_item(coords)
-		emit_signal("collideWith", gridmap.mesh_library.get_item_name(itemID))
+		emit_signal("collideWith", gridmap.mesh_library.get_item_name(itemID), coords)
 	return

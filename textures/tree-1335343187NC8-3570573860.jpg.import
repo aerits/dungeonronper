@@ -2,25 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn6gc3w0dcis"
-path.s3tc="res://.godot/imported/tree-1335343187NC8-3570573860.jpg-4aeb194606fd0c6ce6f9f48b56199311.s3tc.ctex"
+uid="uid://cegpjh2wxxi8"
+path="res://.godot/imported/tree-1335343187NC8-3570573860.jpg-4aeb194606fd0c6ce6f9f48b56199311.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/tree-1335343187NC8-3570573860.jpg"
-dest_files=["res://.godot/imported/tree-1335343187NC8-3570573860.jpg-4aeb194606fd0c6ce6f9f48b56199311.s3tc.ctex"]
+dest_files=["res://.godot/imported/tree-1335343187NC8-3570573860.jpg-4aeb194606fd0c6ce6f9f48b56199311.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.0
 compress/uastc_level=0
-compress/rdo_quality_loss=0.0
+compress/rdo_quality_loss=10.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

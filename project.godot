@@ -22,6 +22,43 @@ window/size/viewport_height=600
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/minimize_html_build/plugin.cfg")
+
+[importer_defaults]
+
+texture={
+&"compress/lossy_quality": 0.0,
+&"compress/mode": 4,
+&"compress/rdo_quality_loss": 10.0,
+&"detect_3d/compress_to": 2
+}
+2d_array_texture={
+&"compress/lossy_quality": 0.0,
+&"compress/mode": 4,
+&"compress/rdo_quality_loss": 10.0
+}
+3d_texture={
+&"compress/lossy_quality": 0.0,
+&"compress/mode": 4,
+&"compress/rdo_quality_loss": 10.0
+}
+scene={
+&"meshes/create_shadow_meshes": false,
+&"meshes/generate_lods": false
+}
+cubemap_array_texture={
+&"compress/lossy_quality": 0.0,
+&"compress/mode": 4,
+&"compress/rdo_quality_loss": 10.0
+}
+cubemap_texture={
+&"compress/lossy_quality": 0.0,
+&"compress/mode": 4,
+&"compress/rdo_quality_loss": 10.0
+}
+
 [input]
 
 forward={

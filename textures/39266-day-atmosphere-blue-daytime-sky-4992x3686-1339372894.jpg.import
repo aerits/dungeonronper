@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvvnvv4xd4vgo"
-path="res://.godot/imported/nagito from deviantart.png-06bdf29ef552499d6aec8c3260e9dd86.ctex"
+uid="uid://c41k1wk16xjwh"
+path="res://.godot/imported/39266-day-atmosphere-blue-daytime-sky-4992x3686-1339372894.jpg-4935876b6ad9e07829e25226a29f492b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/nagito from deviantart.png"
-dest_files=["res://.godot/imported/nagito from deviantart.png-06bdf29ef552499d6aec8c3260e9dd86.ctex"]
+source_file="res://textures/39266-day-atmosphere-blue-daytime-sky-4992x3686-1339372894.jpg"
+dest_files=["res://.godot/imported/39266-day-atmosphere-blue-daytime-sky-4992x3686-1339372894.jpg-4935876b6ad9e07829e25226a29f492b.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=10.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=2
+detect_3d/compress_to=0

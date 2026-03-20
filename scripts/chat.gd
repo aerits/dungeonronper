@@ -22,12 +22,12 @@ func set_text():
 	#)
 	emit_signal("log_text", 
 	"[font_size='20'][color='green']["+chattext[cur_mes].name+"][/color]:"+chattext[cur_mes].text+"[/font_size]"
-	, false)
+	, true)
 	$TextureRect.texture = nameToImg[chattext[cur_mes].name]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var par = get_parent().get_child(0)
+	var par = get_parent()
 	if par:
 		print(par.name)
 		par.connect("send_chat", _on_send_chat)

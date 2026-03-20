@@ -2,25 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c35sd5c0sqlfx"
-path.s3tc="res://.godot/imported/(grass-2)-turf-lawn-green-ground-field-seamless-texture-2048x2048-o-77032739.jpg-17f05f3e05a5f203c8b5167c7d6133d3.s3tc.ctex"
+uid="uid://c626rm4733r57"
+path="res://.godot/imported/grass.jpg-7c31b068203bf1d53a3db469e9ee2f5d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/(grass-2)-turf-lawn-green-ground-field-seamless-texture-2048x2048-o-77032739.jpg"
-dest_files=["res://.godot/imported/(grass-2)-turf-lawn-green-ground-field-seamless-texture-2048x2048-o-77032739.jpg-17f05f3e05a5f203c8b5167c7d6133d3.s3tc.ctex"]
+source_file="res://textures/grass.jpg"
+dest_files=["res://.godot/imported/grass.jpg-7c31b068203bf1d53a3db469e9ee2f5d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.0
 compress/uastc_level=0
-compress/rdo_quality_loss=0.0
+compress/rdo_quality_loss=10.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

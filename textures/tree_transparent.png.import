@@ -2,25 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1yuaxc8p4acw"
-path.s3tc="res://.godot/imported/isolated-trees-on-without-background-png-1879860057.png-201ab2953b7c4784c0d3c59c147dc95a.s3tc.ctex"
+uid="uid://cix1e21hjdw6"
+path="res://.godot/imported/tree_transparent.png-80fe876ca21c20de610bcc387a2a6a00.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/isolated-trees-on-without-background-png-1879860057.png"
-dest_files=["res://.godot/imported/isolated-trees-on-without-background-png-1879860057.png-201ab2953b7c4784c0d3c59c147dc95a.s3tc.ctex"]
+source_file="res://textures/tree_transparent.png"
+dest_files=["res://.godot/imported/tree_transparent.png-80fe876ca21c20de610bcc387a2a6a00.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.0
 compress/uastc_level=0
-compress/rdo_quality_loss=0.0
+compress/rdo_quality_loss=10.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

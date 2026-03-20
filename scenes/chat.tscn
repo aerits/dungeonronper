@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_sbgww")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=521001110]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 0
 offset_left = 91.0

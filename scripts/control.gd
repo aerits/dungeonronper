@@ -23,4 +23,10 @@ func _on_node_3d_log_text(s: String, clr: bool) -> void:
 		"[font_size='10']" +
 		Time.get_time_string_from_system() + 
 		"[/font_size]" +
-		" " + s  + "\n")
+		" " + s
+				.replace("Hopes Peak Academy", "[color=blue]Hopes Peak Academy[/color]")
+				.replace("hope", "[color=blue]hope[/color]")
+				.replace("Hope", "[color=blue]Hope[/color]")
+				.replace("despair", "[color=red]despair[/color]")
+				.replace("Despair", "[color=red]Despair[/color]")
+		  + "\n")
