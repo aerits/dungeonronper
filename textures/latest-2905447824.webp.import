@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdvbb1se2xnu1"
-path.s3tc="res://.godot/imported/hajime.png-a82f0295f0fd951b3c339d8d5c29f29e.s3tc.ctex"
+uid="uid://b6kpyjka46rqs"
+path.s3tc="res://.godot/imported/latest-2905447824.webp-e54c40c0093a7dac3ce2a7082b364f51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://hajime.png"
-dest_files=["res://.godot/imported/hajime.png-a82f0295f0fd951b3c339d8d5c29f29e.s3tc.ctex"]
+source_file="res://textures/latest-2905447824.webp"
+dest_files=["res://.godot/imported/latest-2905447824.webp-e54c40c0093a7dac3ce2a7082b364f51.s3tc.ctex"]
 
 [params]
 

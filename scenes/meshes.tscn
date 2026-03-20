@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjhc4bu70ndff"]
 
-[ext_resource type="Texture2D" uid="uid://cdvbb1se2xnu1" path="res://hajime.png" id="1_bew7s"]
-[ext_resource type="Texture2D" uid="uid://b1yuaxc8p4acw" path="res://isolated-trees-on-without-background-png-1879860057.png" id="1_pcwuq"]
+[ext_resource type="Texture2D" uid="uid://cdvbb1se2xnu1" path="res://textures/hajime.png" id="1_bew7s"]
+[ext_resource type="Texture2D" uid="uid://dxn6gc3w0dcis" path="res://textures/tree-1335343187NC8-3570573860.jpg" id="2_jrncw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v1q5o"]
 
@@ -16,13 +16,14 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_62j3k"]
 material = SubResource("StandardMaterial3D_yhjyq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcwuq"]
-transparency = 1
-albedo_texture = ExtResource("1_pcwuq")
-billboard_mode = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrncw"]
+albedo_texture = ExtResource("2_jrncw")
+uv1_scale = Vector3(2.69, 1.97, 0.745)
+uv1_offset = Vector3(0.17, 0.01, 0)
 
-[sub_resource type="QuadMesh" id="QuadMesh_bew7s"]
-material = SubResource("StandardMaterial3D_pcwuq")
+[sub_resource type="BoxMesh" id="BoxMesh_alg3p"]
+material = SubResource("StandardMaterial3D_jrncw")
+size = Vector3(1, 2.005, 1)
 
 [node name="Meshes" type="Node3D" unique_id=1854711078]
 
@@ -45,7 +46,7 @@ shape = SubResource("BoxShape3D_v1q5o")
 
 [node name="tree" type="MeshInstance3D" parent="." unique_id=1444150105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.680296, 0, 0)
-mesh = SubResource("QuadMesh_bew7s")
+mesh = SubResource("BoxMesh_alg3p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree" unique_id=546460398]
 
