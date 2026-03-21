@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cjhc4bu70ndff"]
 
-[ext_resource type="Texture2D" uid="uid://cdvbb1se2xnu1" path="res://textures/hajime.png" id="1_bew7s"]
-[ext_resource type="Texture2D" uid="uid://dxn6gc3w0dcis" path="res://textures/tree-1335343187NC8-3570573860.jpg" id="2_jrncw"]
-[ext_resource type="Texture2D" uid="uid://ciu3h3nvosrvt" path="res://textures/tree_transparent.png" id="3_alg3p"]
+[ext_resource type="Texture2D" uid="uid://isq3o0nt0hp" path="res://textures/hajime.png" id="1_bew7s"]
+[ext_resource type="Texture2D" uid="uid://cegpjh2wxxi8" path="res://textures/tree-1335343187NC8-3570573860.jpg" id="2_jrncw"]
+[ext_resource type="Texture2D" uid="uid://cix1e21hjdw6" path="res://textures/tree_transparent.png" id="3_alg3p"]
+[ext_resource type="Texture2D" uid="uid://csdgl7hj0e5c1" path="res://textures/hpa.png" id="4_ag5xb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v1q5o"]
 
@@ -35,6 +36,13 @@ grow_amount = 0.5
 
 [sub_resource type="QuadMesh" id="QuadMesh_jrpdi"]
 material = SubResource("StandardMaterial3D_ag5xb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrpdi"]
+albedo_texture = ExtResource("4_ag5xb")
+uv1_scale = Vector3(2.975, 1.985, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0pybw"]
+material = SubResource("StandardMaterial3D_jrpdi")
 
 [node name="Meshes" type="Node3D" unique_id=1854711078]
 
@@ -71,4 +79,13 @@ mesh = SubResource("QuadMesh_jrpdi")
 [node name="StaticBody3D" type="StaticBody3D" parent="tree_transparent" unique_id=1803180089]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_transparent/StaticBody3D" unique_id=1900978311]
+shape = SubResource("BoxShape3D_v1q5o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=294673917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.085557, 0, 0)
+mesh = SubResource("BoxMesh_0pybw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=723495072]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=26249590]
 shape = SubResource("BoxShape3D_v1q5o")

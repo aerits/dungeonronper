@@ -4,13 +4,13 @@ shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
 
 // rez controls - don't push too high or it'll look clean we don't want that lol
-uniform int resolution_x = 320; // psx standard
-uniform int resolution_y = 240; 
+uniform int resolution_x = 520; // psx standard
+uniform int resolution_y = 440; 
 uniform int color_bit_depth = 4; // 16 colors per channel feels right
 uniform float dither_strength = 0.04; // grain to hide banding
 
 // jitter section - this is where the magic happens
-uniform float jitter_amount = 0.003;
+uniform float jitter_amount = 0.000;
 uniform float jitter_speed = 0.5;
 uniform float jitter_frequency = 180.0;
 

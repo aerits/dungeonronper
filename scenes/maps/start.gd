@@ -20,6 +20,11 @@ func _on_character_body_3d_collide_with(item: String, pos: Vector3i) -> void:
 			emit_signal("log_text", "Inspect: This tree is hopeless", false)
 	if item == "tree_transparent":
 		emit_signal("log_text", "Inspect: This tree is filled with despair", false)
+	if item == "MeshInstance3D":
+		log_("Inspect: MeshInstance3D", false)
+	if item == "MeshInstance3D2":
+		log_("Inspect: Hopes Peak Academy", false)
+		emit_signal("switch_map", load("res://scenes/maps/hpa1.tscn"))
 	if pos == Vector3i(-6,0,3) and item == "hajime":
 		start_chat(
 			[["hajime",".. the school that we were supposed to have spent 4 years at --"],

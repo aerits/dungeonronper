@@ -4,6 +4,7 @@ extends Node
 
 signal send_chat(x: Array)
 signal log_text(s: String, clr: bool)
+signal switch_map(scene: PackedScene)
 
 var chat_node: Node = null
 var finish_chat: Callable
