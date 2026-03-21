@@ -44,8 +44,8 @@ func _on_node_3d_switch_map(scene: PackedScene) -> void:
 	n.connect("send_chat", _on_node_3d_send_chat)
 	n.connect("log_text", _on_node_3d_log_text)
 	n.connect("switch_map", _on_node_3d_switch_map)
-	$HBoxContainer/SubViewportContainer/SubViewport.add_child(n)
-	$HBoxContainer/SubViewportContainer/SubViewport.get_child(0).queue_free()
+	$VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport.add_child(n)
+	$VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport.get_child(0).queue_free()
 
 
 func _on_line_edit_text_submitted(new_text: String) -> void:

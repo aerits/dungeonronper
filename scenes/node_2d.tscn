@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://cvvnvv4xd4vgo" path="res://textures/nagito from deviantart.png" id="3_j7wrs"]
 [ext_resource type="Material" uid="uid://cjq2wmptokrfo" path="res://kimi retro game shader.tres" id="4_fws66"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04qyp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7wrs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fws66"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hh0fu"]
+
 [node name="Control" type="Control" unique_id=1639764145]
 layout_mode = 3
 anchors_preset = 15
@@ -101,6 +109,44 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.7
 placeholder_text = "enter scene"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=2085045657]
+position = Vector2(392, 194)
+rotation = -3.169518
+scale = Vector2(3.308, 3.308)
+shape = SubResource("WorldBoundaryShape2D_04qyp")
+action = "forward"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=358927481]
+position = Vector2(604, 298)
+rotation = -1.5865043
+scale = Vector2(3.563, 3.563)
+shape = SubResource("WorldBoundaryShape2D_j7wrs")
+action = "look_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=139963929]
+position = Vector2(193.99998, 283)
+rotation = 1.5411258
+scale = Vector2(3.563, 3.563)
+shape = SubResource("WorldBoundaryShape2D_fws66")
+action = "look_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="." unique_id=680246703]
+position = Vector2(394, 488.99997)
+scale = Vector2(3.563, 3.563)
+shape = SubResource("WorldBoundaryShape2D_hh0fu")
+action = "back"
+visibility_mode = 1
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="." unique_id=368660624]
+position = Vector2(403, -13.0000305)
+scale = Vector2(3.563, 3.563)
+shape = SubResource("WorldBoundaryShape2D_hh0fu")
+action = "ui_accept"
+visibility_mode = 1
 
 [connection signal="log_text" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_log_text"]
 [connection signal="send_chat" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_send_chat"]
