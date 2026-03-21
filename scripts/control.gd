@@ -25,8 +25,8 @@ func _on_node_3d_send_chat(x: Array) -> void:
 
 func _on_node_3d_log_text(s: String, clr: bool) -> void:
 	if clr != null and clr == true:
-		$ColorRect2/RichTextLabel.clear()
-	$ColorRect2/RichTextLabel.append_text(
+		$VBoxContainer/ColorRect2/RichTextLabel.clear()
+	$VBoxContainer/ColorRect2/RichTextLabel.append_text(
 		"[font_size='10']" +
 		Time.get_time_string_from_system() + 
 		"[/font_size]" +

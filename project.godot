@@ -13,6 +13,8 @@ config_version=5
 config/name="dungeonronper"
 run/main_scene="uid://dnyv47lcp8iji"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://textures/icon.svg"
 
 [display]
@@ -21,10 +23,6 @@ window/size/viewport_width=800
 window/size/viewport_height=600
 window/size/resizable=false
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/minimize_html_build/plugin.cfg")
 
 [importer_defaults]
 

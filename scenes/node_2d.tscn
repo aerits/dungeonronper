@@ -8,69 +8,68 @@
 
 [node name="Control" type="Control" unique_id=1639764145]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_4vge2")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2049423735]
-layout_mode = 0
-offset_left = -230.0
-offset_top = -57.0
-offset_right = 1050.0
-offset_bottom = 663.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_j7wrs")
+expand_mode = 5
+stretch_mode = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=630441266]
-layout_mode = 0
-offset_right = 799.0
-offset_bottom = 427.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1440438581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=630441266]
+layout_mode = 2
 alignment = 1
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=91454029]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer" unique_id=91454029]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
 stretch_shrink = 3
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=446071676]
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=446071676]
 handle_input_locally = false
 anisotropic_filtering_level = 0
-size = Vector2i(148, 142)
+size = Vector2i(132, 132)
 render_target_update_mode = 4
 
-[node name="Node3D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1643327515 instance=ExtResource("2_04qyp")]
+[node name="Node3D" parent="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1643327515 instance=ExtResource("2_04qyp")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1038649078]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2004275117]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=2004275117]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("3_j7wrs")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1109145143]
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=519846501]
-material = ExtResource("4_fws66")
-layout_mode = 0
-offset_left = -215.0
-offset_top = -64.0
-offset_right = 1132.0
-offset_bottom = 674.0
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=498961628]
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer" unique_id=498961628]
 texture_filter = 1
-layout_mode = 0
-offset_left = -10.0
-offset_top = 437.0
-offset_right = 811.0
-offset_bottom = 607.0
+layout_mode = 2
+size_flags_vertical = 3
 color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2" unique_id=2110445658]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ColorRect2" unique_id=2110445658]
 layout_mode = 0
 offset_left = 11.0
 offset_right = 807.0
@@ -80,8 +79,17 @@ scroll_active = false
 scroll_following = true
 text_direction = 1
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=519846501]
+material = ExtResource("4_fws66")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1415343267]
-visible = false
 layout_mode = 0
 offset_left = 544.0
 offset_top = 25.0
@@ -90,9 +98,11 @@ offset_bottom = 105.0
 
 [node name="LineEdit" type="LineEdit" parent="FoldableContainer" unique_id=804634212]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.7
 placeholder_text = "enter scene"
 
-[connection signal="log_text" from="HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_log_text"]
-[connection signal="send_chat" from="HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_send_chat"]
-[connection signal="switch_map" from="HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_switch_map"]
+[connection signal="log_text" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_log_text"]
+[connection signal="send_chat" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_send_chat"]
+[connection signal="switch_map" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_switch_map"]
 [connection signal="text_submitted" from="FoldableContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
