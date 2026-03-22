@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://gyjcypew1y3a"]
+
+[ext_resource type="Script" uid="uid://cg46g7s5namet" path="res://scenes/battle.gd" id="1_th188"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_th188"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Animation" id="Animation_th188"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_p1qf1"]
+resource_name = "intro_battle"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -1.3879302, 1, 1, 0, -1, -2.38)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a12nh"]
+_data = {
+&"RESET": SubResource("Animation_th188"),
+&"intro_battle": SubResource("Animation_p1qf1")
+}
+
+[node name="Battle" type="Node3D" unique_id=2044008090]
+script = ExtResource("1_th188")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1923409627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012765765, 0.1621669)
+current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=908619819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3879302)
+texture = SubResource("ViewportTexture_th188")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=886202576]
+own_world_3d = true
+size = Vector2i(320, 240)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1945201537]
+libraries/ = SubResource("AnimationLibrary_a12nh")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

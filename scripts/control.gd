@@ -3,6 +3,7 @@ extends Control
 signal send_chat(x: Array)
 signal player_moved(pos: Vector3i, surround: Array[String])
 signal switch_map(scene: PackedScene)
+signal start_battle(n: Node)
 
 var chat_node = null
 var debug_hidden = true
@@ -16,13 +17,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#if Input.is_action_just_pressed("toggle_debug_tools"):
+		#if debug_hidden:
+			#$FoldableContainer.show()
+			#debug_hidden = false
+		#else:
+			#debug_hidden = true
+			#$FoldableContainer.hide()
 	if Input.is_action_just_pressed("toggle_debug_tools"):
-		if debug_hidden:
-			$FoldableContainer.show()
-			debug_hidden = false
-		else:
-			debug_hidden = true
-			$FoldableContainer.hide()
+		self._on_node_3d_battle()
 
 func _on_node_3d_send_chat(x: Array) -> void:
 	emit_signal("send_chat",x)
@@ -67,3 +70,13 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_node_3d_player_moved(pos: Vector3i, surround: Array[String]) -> void:
 	emit_signal("player_moved", pos, surround)
+	
+func _on_node_3d_battle():
+	var s: PackedScene = load("res://scenes/battle.tscn")
+	var n = s.instantiate()
+	connect("start_battle", n._on_start_battle)
+	get_tree().root.add_child(n)
+	
+	get_tree().root.remove_child(self)
+	emit_signal("start_battle", self)
+	
