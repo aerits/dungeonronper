@@ -19,3 +19,4 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5,
 gridmap = NodePath("../GridMap")
 
 [connection signal="collideWith" from="CharacterBody3D" to="." method="_on_character_body_3d_collide_with"]
+[connection signal="player_moved" from="CharacterBody3D" to="." method="_on_character_body_3d_player_moved"]

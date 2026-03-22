@@ -31,7 +31,7 @@ func _on_character_body_3d_collide_with(item: String, pos: Vector3i) -> void:
 			["hajime", "Whoa, you startled me Nagito, you are also revisiting the school today?"],
 			["nagito", "... Yeah. There's something off about the basement of the school. You noticed it too, right?"],
 			["hajime", "..."],
-			["hajime", "what. bb I'm just reminiscing. After I lost my izuru god powers, I'm just an ordinary guy."],
+			["hajime", "what. im just an ordinary guy"],
 			["*", "*sound of bones shuffling*"],
 			["hajime", "*slightly startled* what was that?"],
 			["nagito", "That was not a [b]Hopeful[/b] noise. We should investigate"],

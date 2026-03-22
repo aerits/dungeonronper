@@ -31,3 +31,4 @@ gridmap = NodePath("../GridMap")
 mesh = SubResource("PlaneMesh_30yrw")
 
 [connection signal="collideWith" from="CharacterBody3D" to="." method="_on_character_body_3d_collide_with"]
+[connection signal="player_moved" from="CharacterBody3D" to="." method="_on_character_body_3d_player_moved"]

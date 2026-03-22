@@ -5,6 +5,7 @@ extends Node
 signal send_chat(x: Array)
 signal log_text(s: String, clr: bool)
 signal switch_map(scene: PackedScene)
+signal player_moved(pos: Vector3i, surround: Array[String])
 
 var chat_node: Node = null
 var finish_chat: Callable
@@ -25,6 +26,9 @@ func log_(s: String, clr: bool) -> void:
 
 func _on_character_body_3d_collide_with(item: String, pos: Vector3i) -> void:
 	pass
+
+func _on_character_body_3d_player_moved(pos: Vector3i, surround: Array[String]) -> void:
+	emit_signal("player_moved", pos, surround)
 
 func _on_chat_log_text(s: String, clr: bool) -> void:
 	log_(s, clr)

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b6csq0ljncqka"]
+
+[ext_resource type="Shader" uid="uid://d0rql3v2rimre" path="res://n64.gdshader" id="1_uwjb1"]
+
+[resource]
+shader = ExtResource("1_uwjb1")
+shader_parameter/virtual_resolution = Vector2(320, 240)
+shader_parameter/color_bitdepth = 5
+shader_parameter/dither_strength = 1.0
+shader_parameter/use_magic_matrix = false
+shader_parameter/enable_dedithering = false
+shader_parameter/dedither_strength = 1.0
+shader_parameter/enable_480i_upscale = true
+shader_parameter/scanline_intensity = 0.1

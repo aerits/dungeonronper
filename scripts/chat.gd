@@ -21,7 +21,7 @@ func set_text():
 		#"[font_size='30']"+chattext[cur_mes].text+"[/font_size]"
 	#)
 	emit_signal("log_text", 
-	"[font_size='20'][color='green']["+chattext[cur_mes].name+"][/color]:"+chattext[cur_mes].text+"[/font_size]"
+	"[font_size='10'][color='green']["+chattext[cur_mes].name+"][/color]:"+chattext[cur_mes].text+"[/font_size]"
 	, true)
 	$TextureRect.texture = nameToImg[chattext[cur_mes].name]
 

@@ -1,10 +1,37 @@
-[gd_scene format=3 uid="uid://dnyv47lcp8iji"]
+[gd_scene format=4 uid="uid://dnyv47lcp8iji"]
 
 [ext_resource type="Script" uid="uid://dbci16hsd4625" path="res://scripts/control.gd" id="1_4vge2"]
-[ext_resource type="PackedScene" uid="uid://31wxihstnf1x" path="res://scenes/maps/start.tscn" id="2_04qyp"]
 [ext_resource type="Texture2D" uid="uid://mw0rqhmffqjd" path="res://textures/latest-2905447824.webp" id="2_j7wrs"]
 [ext_resource type="Texture2D" uid="uid://cvvnvv4xd4vgo" path="res://textures/nagito from deviantart.png" id="3_j7wrs"]
-[ext_resource type="Material" uid="uid://cjq2wmptokrfo" path="res://kimi retro game shader.tres" id="4_fws66"]
+[ext_resource type="Material" uid="uid://b6csq0ljncqka" path="res://n64.tres" id="5_04qyp"]
+[ext_resource type="PackedScene" uid="uid://c8m5tuamdsuxb" path="res://scenes/minimap.tscn" id="5_j7wrs"]
+[ext_resource type="Texture2D" uid="uid://iro6auqlcmfn" path="res://textures/walls.png" id="6_j7wrs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fws66"]
+texture = ExtResource("6_j7wrs")
+margins = Vector2i(1, 1)
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(3, 3)
+0:0/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:2/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hh0fu"]
+tile_size = Vector2i(3, 3)
+sources/0 = SubResource("TileSetAtlasSource_fws66")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04qyp"]
 
@@ -15,6 +42,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hh0fu"]
 
 [node name="Control" type="Control" unique_id=1639764145]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +52,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_4vge2")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2049423735]
 layout_mode = 1
@@ -47,22 +74,23 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=630441266]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 alignment = 1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer" unique_id=91454029]
 texture_filter = 1
+material = ExtResource("5_04qyp")
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
-stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=446071676]
 handle_input_locally = false
 anisotropic_filtering_level = 0
-size = Vector2i(132, 132)
+canvas_item_default_texture_filter = 0
+size = Vector2i(158, 158)
 render_target_update_mode = 4
-
-[node name="Node3D" parent="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1643327515 instance=ExtResource("2_04qyp")]
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2004275117]
 layout_mode = 2
@@ -78,31 +106,27 @@ size_flags_vertical = 3
 color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ColorRect2" unique_id=2110445658]
-layout_mode = 0
-offset_left = 11.0
-offset_right = 807.0
-offset_bottom = 149.0
-bbcode_enabled = true
-scroll_active = false
-scroll_following = true
-text_direction = 1
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=519846501]
-material = ExtResource("4_fws66")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
+bbcode_enabled = true
+scroll_active = false
+scroll_following = true
+text_direction = 1
+
+[node name="minimap" parent="." unique_id=1976466634 instance=ExtResource("5_j7wrs")]
+texture_filter = 1
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1415343267]
+visible = false
 layout_mode = 0
-offset_left = 544.0
-offset_top = 25.0
-offset_right = 741.0
-offset_bottom = 105.0
+offset_left = 171.0
+offset_top = 15.0
+offset_right = 368.0
+offset_bottom = 95.0
 
 [node name="LineEdit" type="LineEdit" parent="FoldableContainer" unique_id=804634212]
 layout_mode = 2
@@ -110,45 +134,52 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.7
 placeholder_text = "enter scene"
 
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1183203302]
+position = Vector2(244, 73)
+tile_map_data = PackedByteArray("AAD2/wcAAAAAAAEAAAD3/wcAAAAAAAEAAAD3/wYAAAAAAAEAAAD4/wYAAAAAAAEAAAD5/wYAAAAAAAEAAAD6/wYAAAAAAAEAAAD7/wYAAAAAAAEAAAD8/wYAAAAAAAEAAAD9/wYAAAAAAAEAAAD+/wYAAAAAAAEAAAD//wYAAAAAAAEAAAAAAAYAAAAAAAEAAAABAAYAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAcAAAAAAAEAAAALAAcAAAAAAAEAAAAMAAcAAAAAAAEAAAANAAcAAAAAAAEAAAAMAAgAAAAAAAEAAAALAAgAAAAAAAEAAAALAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAIAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAFAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAADAAkAAAAAAAEAAAACAAkAAAAAAAEAAAABAAkAAAAAAAEAAAAAAAkAAAAAAAEAAAD//wkAAAAAAAEAAAD+/wkAAAAAAAEAAAD9/wkAAAAAAAEAAAD8/wkAAAAAAAEAAAD7/wkAAAAAAAEAAAD6/wkAAAAAAAEAAAD5/wkAAAAAAAEAAAD4/wkAAAAAAAEAAAD3/wkAAAAAAAEAAAD2/wkAAAAAAAEAAAD1/wkAAAAAAAEAAAD0/wkAAAAAAAEAAADz/wkAAAAAAAEAAADy/wkAAAAAAAEAAADx/wkAAAAAAAEAAADw/wkAAAAAAAEAAADv/wkAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_hh0fu")
+occlusion_enabled = false
+collision_enabled = false
+navigation_enabled = false
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=2085045657]
-position = Vector2(392, 194)
-rotation = -3.169518
-scale = Vector2(3.308, 3.308)
+visible = false
+position = Vector2(168.99997, 71)
+rotation = 3.1136672
+scale = Vector2(3.3080003, 3.3080003)
 shape = SubResource("WorldBoundaryShape2D_04qyp")
 action = "forward"
 visibility_mode = 1
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=358927481]
-position = Vector2(604, 298)
-rotation = -1.5865043
-scale = Vector2(3.563, 3.563)
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="TouchScreenButton" unique_id=358927481]
+position = Vector2(-18.74022, -21.994953)
+rotation = 1.5830137
+scale = Vector2(1.0770859, 1.0770859)
 shape = SubResource("WorldBoundaryShape2D_j7wrs")
 action = "look_right"
 visibility_mode = 1
 
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=139963929]
-position = Vector2(193.99998, 283)
-rotation = 1.5411258
-scale = Vector2(3.563, 3.563)
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="TouchScreenButton/TouchScreenButton2" unique_id=139963929]
+position = Vector2(-0.18502426, -41.82676)
+rotation = 3.1276302
 shape = SubResource("WorldBoundaryShape2D_fws66")
 action = "look_left"
 visibility_mode = 1
 
-[node name="TouchScreenButton4" type="TouchScreenButton" parent="." unique_id=680246703]
-position = Vector2(394, 488.99997)
-scale = Vector2(3.563, 3.563)
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="TouchScreenButton/TouchScreenButton2/TouchScreenButton3" unique_id=680246703]
+position = Vector2(11.590446, -21.557302)
+rotation = -1.5411258
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("WorldBoundaryShape2D_hh0fu")
 action = "back"
 visibility_mode = 1
 
-[node name="TouchScreenButton5" type="TouchScreenButton" parent="." unique_id=368660624]
-position = Vector2(403, -13.0000305)
-scale = Vector2(3.563, 3.563)
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="TouchScreenButton/TouchScreenButton2/TouchScreenButton3/TouchScreenButton4" unique_id=368660624]
+position = Vector2(-1.4033089, -56.69379)
 shape = SubResource("WorldBoundaryShape2D_hh0fu")
 action = "ui_accept"
 visibility_mode = 1
 
-[connection signal="log_text" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_log_text"]
-[connection signal="send_chat" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_send_chat"]
-[connection signal="switch_map" from="VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Node3D" to="." method="_on_node_3d_switch_map"]
+[connection signal="player_moved" from="." to="minimap" method="_on_control_player_moved"]
+[connection signal="switch_map" from="." to="minimap" method="_on_control_switch_map"]
 [connection signal="text_submitted" from="FoldableContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
