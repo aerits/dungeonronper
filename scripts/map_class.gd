@@ -16,7 +16,10 @@ func start_chat(x: Array, callback: Callable=func (): pass) -> void:
 	var n: Node = scene.instantiate()
 	n.close_window.connect(_on_chat_close)
 	n.log_text.connect(_on_chat_log_text)
-	get_tree().root.get_child(0).get_child(1).add_sibling(n)
+	#get_tree().root.get_child(0).get_child(1).add_sibling(n)
+	var n2 := get_node("../../../../../")
+	print(n2.get_path())
+	n2.add_child(n)
 	emit_signal("send_chat", x)
 	chat_node = n
 	finish_chat = callback

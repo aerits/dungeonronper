@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dsp4qm6yowpyq"]
+
+[ext_resource type="PackedScene" uid="uid://dnyv47lcp8iji" path="res://scenes/node_2d.tscn" id="1_18srf"]
+[ext_resource type="Script" uid="uid://c4q4jhchkhbqg" path="res://scenes/dualscreen.gd" id="1_ukv1t"]
+[ext_resource type="PackedScene" uid="uid://c8m5tuamdsuxb" path="res://scenes/minimap.tscn" id="3_npbij"]
+
+[node name="Dualscreen" type="Control" unique_id=2141909272]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukv1t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=792718979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer" unique_id=926099570]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/SubViewportContainer" unique_id=1469201336]
+handle_input_locally = false
+size = Vector2i(320, 118)
+render_target_update_mode = 4
+
+[node name="Control" parent="VBoxContainer/SubViewportContainer/SubViewport" unique_id=1639764145 instance=ExtResource("1_18srf")]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="VBoxContainer" unique_id=1523145757]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/SubViewportContainer2" unique_id=1604573555]
+handle_input_locally = false
+size = Vector2i(320, 118)
+render_target_update_mode = 4
+
+[node name="minimap" parent="VBoxContainer/SubViewportContainer2/SubViewport" unique_id=1976466634 instance=ExtResource("3_npbij")]
+scale = Vector2(2, 2)
+
+[connection signal="player_moved" from="VBoxContainer/SubViewportContainer/SubViewport/Control" to="VBoxContainer/SubViewportContainer2/SubViewport/minimap" method="_on_control_player_moved"]
+[connection signal="switch_map" from="VBoxContainer/SubViewportContainer/SubViewport/Control" to="VBoxContainer/SubViewportContainer2/SubViewport/minimap" method="_on_control_switch_map"]

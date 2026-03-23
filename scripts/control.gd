@@ -75,8 +75,8 @@ func _on_node_3d_battle():
 	var s: PackedScene = load("res://scenes/battle.tscn")
 	var n = s.instantiate()
 	connect("start_battle", n._on_start_battle)
-	get_tree().root.add_child(n)
+	get_parent().add_child(n)
 	
-	get_tree().root.remove_child(self)
+	get_parent().remove_child(self)
 	emit_signal("start_battle", self)
 	

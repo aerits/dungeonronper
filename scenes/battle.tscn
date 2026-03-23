@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cg46g7s5namet" path="res://scenes/battle.gd" id="1_th188"]
 
+[sub_resource type="Environment" id="Environment_dn72j"]
+background_mode = 1
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_th188"]
 viewport_path = NodePath("SubViewport")
 
@@ -43,10 +46,13 @@ script = ExtResource("1_th188")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1923409627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012765765, 0.1621669)
+environment = SubResource("Environment_dn72j")
 current = true
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1504378722]
+
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=908619819]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3879302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.38)
 texture = SubResource("ViewportTexture_th188")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=886202576]

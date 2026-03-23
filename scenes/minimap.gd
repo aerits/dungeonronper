@@ -13,44 +13,28 @@ func _on_control_player_moved(pos: Vector3i, surround: Array[String]) -> void:
 		if e.length() > 0:
 			return 1
 		return 0).map(func (e: int):
-		return str(e)).reduce(func (acc: String, e: String):
-		return acc + e)
+		return str(e)).reduce(func (acc, e): return acc + e)
+		
 	var id: Vector2i = Vector2i(0,0)
 	match dirs: # right left down up
-		"0001":
-			id = Vector2i(1,0)
-		"0010":
-			id = Vector2i(2,0)
-		"0011":
-			id = Vector2i(1,1)
-		"0100":
-			id = Vector2i(3,0)
-		"0101":
-			id = Vector2i(3,1)
-		"0110":
-			id = Vector2i(1,2)
-		"0111":
-			id = Vector2i(2,3)
-		"1000":
-			id = Vector2i(0,1)
-		"1001":
-			id = Vector2i(0,2)
-		"1010":
-			id = Vector2i(2,2)
-		"1011":
-			id = Vector2i(1,3)
-		"1100":
-			id = Vector2i(2,1)
-		"1101":
-			id = Vector2i(0,3)
-		"1110":
-			id = Vector2i(3,2)
-		"1111":
-			id = Vector2i(3,3)
+		"0001":id = Vector2i(1,0)
+		"0010":id = Vector2i(2,0)
+		"0011":id = Vector2i(1,1)
+		"0100":id = Vector2i(3,0)
+		"0101":id = Vector2i(3,1)
+		"0110":id = Vector2i(1,2)
+		"0111":id = Vector2i(2,3)
+		"1000":id = Vector2i(0,1)
+		"1001":id = Vector2i(0,2)
+		"1010":id = Vector2i(2,2)
+		"1011":id = Vector2i(1,3)
+		"1100":id = Vector2i(2,1)
+		"1101":id = Vector2i(0,3)
+		"1110":id = Vector2i(3,2)
+		"1111":id = Vector2i(3,3)
 	$TileMapLayer.set_cell(pos2, 1, id)
 	var dot_pos = $TileMapLayer.map_to_local(pos2)
 	$TileMapLayer/map_dot.position = dot_pos
-	
 	
 	# godot tilemaps are invisible in web
 	# so we need to add nodes to draw the tilemap

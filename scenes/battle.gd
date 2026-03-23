@@ -19,7 +19,7 @@ func exit():
 	sv.process_mode = Node.PROCESS_MODE_INHERIT
 	var base_scene: Node = sv.get_child(0)
 	sv.remove_child(base_scene)
-	get_tree().root.add_child(base_scene)
+	get_parent().add_child(base_scene)
 	self.queue_free()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
